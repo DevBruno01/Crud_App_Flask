@@ -42,7 +42,9 @@ def insert():
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    all_data = Data.query.all()
+
+    return render_template("index.html", employees = all_data)
 
 
 
