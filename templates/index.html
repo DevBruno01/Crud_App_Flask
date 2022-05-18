@@ -61,15 +61,15 @@
                         <td>{{row.email}}</td>
                         <td>{{row.phone}}</td>
                         <td>
-                            <a href="" class="btn btn-warning btn-xs" data-bs-toggle="modal" data-bs-target="#modaledit">Edit</a>
-                            <a href="" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure to Delete ?')">Delete</a>
+                            <a href="/update/{{row.id}}" class="btn btn-warning btn-xs" data-bs-toggle="modal" data-bs-target="#modaledit{{row.id}}">Edit</a>
+                            <a href="/delete/{{row.id}}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure to Delete ?')">Delete</a>
                         </td>
 
                     </tr>
 
 
                   <!-- Modal Edit Employee-->
-<div id="modaledit" class="modal fade" role="dialog">
+<div id="modaledit{{row.id}}" class="modal fade" role="dialog">
    <div class="modal-dialog">
 
 
@@ -88,16 +88,16 @@
          <div class="modal-body">
 
 
-            <form action="" method="POST">
+            <form action="{{url_for('update')}}" method="POST">
 
 
                <div class="form-group">
 
 
                   <label>Name:</label>
-                   <input type="hidden"  name="id" value="">
+                   <input type="hidden"  name="id" value="{{row.id}}">
 
-                  <input type="text" minlength="3"  maxlength="20" class="form-control" name="name" value="">
+                  <input type="text" minlength="3"  maxlength="20" class="form-control" name="name" value="{{row.name}}">
 
 
                </div>
@@ -109,7 +109,7 @@
 
                   <label>Email:</label>
 
-                  <input type="email" class="form-control" name="email" value="">
+                  <input type="email" class="form-control" name="email" value="{{row.email}}">
 
 
                </div>
@@ -120,7 +120,7 @@
 
                   <label>Phone:</label>
 
-                  <input type="text" class="form-control" name="phone" value="">
+                  <input type="text" class="form-control" name="phone" value="{{row.phone}}">
 
 
                </div>
