@@ -15,12 +15,16 @@ Nesta aplicação é realizado o cadastro de empregados, a leitura e exibição 
 - Python
 - SQL
 - Bootstrap
+- Flask framework
+
 
 ## Tecnologias necessárias para rodar o projeto
 
 - Python
 - WAMP
 - Mysql
+- Flask framework
+- sqlalchamey (Gerencia o crud com o banco de dados Mysql)
 
 # Autor
 
